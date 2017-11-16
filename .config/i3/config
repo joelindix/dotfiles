@@ -34,10 +34,10 @@ floating_modifier $mod
 exec --no-startup-id ~/.fehbg &
 bindsym Print exec scrot -e 'mv $f ~/Pictures/Screenshots'
 bindsym $mod+Print exec scrot -s -e 'mv $f ~/Pictures/Screenshots'
-exec --no-startup-id xautolock -time 5 -locker "i3lock -i ~/Imatges/slack-i3lock.png"
+exec --no-startup-id xautolock -time 5 -locker "i3lock -i /home/sergi/Imatges/slack-i3lock.png"
 
 # my binds
-bindsym $mod+Scroll_Lock exec i3lock -i ~/Imatges/slack-i3lock.png
+bindsym $mod+Scroll_Lock exec i3lock -i /home/sergi/Imatges/slack-i3lock.png
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -238,7 +238,8 @@ client.placeholder      #000000     #0c0c0c     #fdf6e3     #000000     #0c0c0c
 client.background       #ffffff
 
 # rofi
-bindsym $mod+d exec rofi -show run -opacity "95" -bw 0 -lines 5 -eh 1 -fullscreen -padding 400 -hide-scrollbar -line-margin 20 -font "hack 18" -config ~/.config/rofi/config.rasi
+# bindsym $mod+d exec rofi -show run -opacity "75" -bw 2 -lines 5 -eh 1 -width 60 -padding 100 -line-margin 20 -font "hack 18" -config ~/.config/rofi/config
+bindsym $mod+d exec rofi -show run -opacity "95" -config ~/.config/rofi/config.rasi
 
 # compton
 exec --no-startup-id compton -f --backend glx
