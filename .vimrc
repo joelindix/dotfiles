@@ -28,6 +28,10 @@ set fillchars+=stl:\ ,stlnc:\
 set guifont=Hack\ 11
 set t_ZH=[3m
 set t_ZR=[23m
+" The "^[" is a single character. You enter it by pressing Ctrl+v and then ESC.
+" The next two lines are needed for vim with tmux and truecolor
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
