@@ -16,12 +16,18 @@ export PATH=$PATH:~/node_modules/.bin/
 export PATH=$PATH:~/Software/sassc/bin/
 export WORKON_HOME=~/Envs
 source /usr/bin/virtualenvwrapper.sh
-# Iniciem powerline només en X sessions. A TTY TERM té el valor "linux".
+export PS1='\[\e[32m\]\u\[\e[0m\]@\[\e[33m\]\h\[\e[0m\]:\w\[\e[32m\]$ \[\e[0m\]'
 if [ $TERM != "linux" ]
 then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    . /usr/lib64/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+    triangle=$'\uE0B0'
+    export PS1='\[\e[42m\]\u@\h \[\e[0;32m\]\[\e[102m\]$triangle\[\e[0;30m\]\[\e[102m\] \w \[\e[0;92m\]\[\e[40m\]$triangle\[\e[0m\]\[\e[40m\] '
 fi
+# Iniciem powerline només en X sessions. A TTY TERM té el valor "linux".
+#if [ $TERM != "linux" ]
+#then
+#    powerline-daemon -q
+#    POWERLINE_BASH_CONTINUATION=1
+#    POWERLINE_BASH_SELECT=1
+#    . /usr/lib64/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+#fi
 export PATH="/opt/yarn/bin:$PATH"
